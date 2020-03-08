@@ -81,7 +81,6 @@ router.get('/tasks', auth, async (req, res) => {
 
 router.get('/tasks/:id', auth, async (request, response) => {
     try {
-        console.log(request.user._id, request.user.name);
         const task = await Task.findOne({
             _id: request.params.id,
             owner: request.user._id
